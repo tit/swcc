@@ -1,0 +1,22 @@
+form method="post" action="result"
+  div class="well"
+    div
+      label Военная академия
+    - @arms_centers.each do |_, value|
+      div
+        input type="number" name="#{value[:value]}" placeholder="#{value[:russian]}"
+
+  - @max_cave_count.times do |count|
+    div class="well"
+      div
+        label Тип войск #{count + 1}
+      div
+        select name="who_in_caves[]"
+          option value="" Никого
+          - @who_in_caves.each do |_, value|
+            option value="#{value[:value]}" #{value[:russian]}
+        div
+          input type="number" name="who_in_cave_counts[]" placeholder="Количество"
+
+  div class="well"
+    input type="submit" class="btn btn-primary"
