@@ -2,7 +2,9 @@
 
 require "sinatra"
 require "slim"
+require "yaml"
 
-require "./controllers/site"
-require "./controllers/static"
-require "./models/site"
+require "models/models"
+
+require "controllers/site"
+require "controllers/static"
