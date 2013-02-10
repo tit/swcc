@@ -18,7 +18,7 @@ form method="post" action="result"
         select name="cave_units[]"
           option value="" Никого
           - @models["barracks"].each do |_, value|
-            option value="#{value["value"]}" #{value["russian"]}
+            option value="#{value["value"]}" #{value["russian"]}/#{value["english"]}
         div
           input type="number" name="cave_units_counts[]" placeholder="Количество"
 

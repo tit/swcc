@@ -8,6 +8,6 @@ class Rack::Protection::FrameOptions
   end
 end
 
-#set :environment, :production
+set :environment, :production
 
 run Sinatra::Application

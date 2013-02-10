@@ -7,6 +7,22 @@ html
     link href="assets/css/bootstrap.css" rel="stylesheet"
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
     script src="assets/js/bootstrap.js"
+
+    css:
+      .donate
+      {
+        -webkit-animation : myfirst 5s;
+      }
+
+      @-webkit-keyframes myfirst
+      {
+        from {
+          color : red;
+        }
+        to {
+
+        }
+      }
   body
     div class="navbar"
       div class="navbar-inner"
@@ -20,7 +36,7 @@ html
             li
               a href="faq" Вопрос-Ответ
             li
-              a href="donate" Помощь проекту
+              a class="donate" href="donate" Помощь проекту
             li
               a href="contacts" Контакты
     div style="text-align:center"

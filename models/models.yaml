@@ -65,7 +65,7 @@ barracks:
       cavalry: 30
   archer:
     value: archer
-    english: archer
+    english: Archer
     russian: Лучник
     power: 94
     low_power:
