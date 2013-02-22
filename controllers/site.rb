@@ -18,7 +18,7 @@ post "/result" do
   cave_max_power_unit = params[:cave_units][0]
   cave_max_power_unit_power = 0
 
-  result_ = "cave have "
+  result_ = "пещера имеет "
 
   @models["max_cave_unit_count"].times do |count|
     if params[:cave_units][count] != ""
@@ -32,14 +32,14 @@ post "/result" do
         cave_max_power_unit_power = cave_unit_power * cave_unit_count
       end
 
-      result_ += "#{params[:cave_units_counts][count]} #{params[:cave_units][count]} unit with #{@models["barracks"][params[:cave_units][count]]["power"]} power (total: #{cave_unit_power * cave_unit_count}), "
+      result_ += "#{params[:cave_units_counts][count]} #{@models["barracks"][params[:cave_units][count]]["russian"]} с мощностью #{@models["barracks"][params[:cave_units][count]]["power"]} (суммарно: #{cave_unit_power * cave_unit_count}), "
     end
   end
 
-  result_ += "cave power #{cave_power}, unit #{cave_max_power_unit} have max power #{cave_max_power_unit_power}, for #{cave_max_power_unit} best attack "
+  result_ += "суммарная мощность пещеры #{cave_power}, юнит #{@models["barracks"][cave_max_power_unit]["russian"]} имеет максимальную мощность #{cave_max_power_unit_power}, против #{@models["barracks"][cave_max_power_unit]["russian"]} лучше посылать "
 
   @models["barracks"][cave_max_power_unit]["low_power"].each do |unit|
-    result_ += "from #{(cave_power * 2.5 / @models["barracks"][unit]["power"]).floor} to #{(cave_power * 6 / @models["barracks"][unit]["power"]).floor} #{unit}, "
+    result_ += "или от #{(cave_power * 2.5 / @models["barracks"][unit]["power"]).floor} до #{(cave_power * 6 / @models["barracks"][unit]["power"]).floor} #{@models["barracks"][unit]["russian"]}, "
   end
 
   @result = result_
